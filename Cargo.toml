@@ -90,9 +90,12 @@ reqwest = "0.9"
 zip = "0.5"
 
 [profile.release]
+opt-level = 3
 lto = true
-debug = 1
 incremental = false
+debug = false
+codegen-units = 1
+panic = "abort"
 
 [package.metadata.deb]
 maintainer = "Joe Wilm <joe@jwilm.com>"
